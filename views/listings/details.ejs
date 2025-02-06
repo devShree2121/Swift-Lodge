@@ -1,0 +1,32 @@
+<% layout("/layouts/boilerplate") -%>
+<body class="bg-light">
+    
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg">
+                    <img src="<%= listData.image %>" class="card-img-top" alt="<%= listData.title %>" 
+                         style="height: 250px; object-fit: cover; border-radius: 10px;">
+                    
+                    <div class="card-body">
+                        <h3 class="card-title text-center"><%= listData.title %></h3>
+
+                        <p class="card-text"><strong>Description:</strong> <%= listData.description %></p>
+                        <p class="card-text"><strong>Price:</strong> $ <%=listing.price.toLocaleString("en-US")%></p>
+                        <p class="card-text"><strong>Location:</strong> <%= listData.location %></p>
+                        <p class="card-text"><strong>Country:</strong> <%= listData.country %></p>
+                        
+                        <div class="d-flex justify-content-between">
+                            <a href="/listings/update/<%= listData._id %>" class="btn btn-warning rounded-pill">Update</a> 
+                            
+                            <form method="POST" action="/listings/<%= listData._id %>?_method=DELETE">
+                                <button type="submit" class="btn btn-danger rounded-pill">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

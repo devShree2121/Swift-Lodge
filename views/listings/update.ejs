@@ -1,0 +1,50 @@
+<% layout("/layouts/boilerplate") -%>
+<body class="bg-light">
+    
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg">
+                    <div class="card-body p-4">
+                        <h3 class="text-center mb-4">Update Listing</h3>
+                        <form method="POST" action="/listings/<%= listData._id %>?_method=PUT">
+                            
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="text" class="form-control rounded-pill" id="title" name="listing[title]" value="<%= listData.title %>">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea class="form-control rounded" id="description" name="listing[description]" rows="3"><%= listData.description %></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Image URL</label>
+                                <input type="text" class="form-control rounded-pill" id="image" name="listing[image]" value="<%= listData.image %>">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="price" class="form-label">Price</label>
+                                <input type="text" class="form-control rounded-pill" id="price" name="listing[price]" value="<%= listData.price %>">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="location" class="form-label">Location</label>
+                                <input type="text" class="form-control rounded-pill" id="location" name="listing[location]" value="<%= listData.location %>">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="country" class="form-label">Country</label>
+                                <input type="text" class="form-control rounded-pill" id="country" name="listing[country]" value="<%= listData.country %>">
+                            </div>
+
+                            <button type="submit" class="btn btn-success w-100 rounded-pill">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
